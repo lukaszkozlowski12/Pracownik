@@ -11,18 +11,18 @@
         android:theme="@style/Theme.Pracownik" >
         <activity android:name=".PanelActivity2" >
         </activity>
-        <activity android:name=".ZobaczSprawozdania" />
-        <activity android:name=".SprawozdanieActivity" />
-        <activity android:name=".ZobaczMojeZadaniaList" />
-        <activity android:name=".ZobaczZadania" />
-        <activity android:name=".DodajZadanie" />
-        <activity android:name=".NotatkiList" />
-        <activity android:name=".Notatka" />
+        <activity android:name=".ZobaczSprawozdania"  android:label="Zobacz sprawozdania"  />
+        <activity android:name=".SprawozdanieActivity"  android:label="Sprawozdanie"  />
+        <activity android:name=".ZobaczMojeZadaniaList"  android:label="Moje zadania"  />
+        <activity android:name=".ZobaczZadania"  android:label="Zobacz zadania"  />
+        <activity android:name=".DodajZadanie"  android:label="Dodaj zadanie"  />
+        <activity android:name=".NotatkiList"  android:label="Ogłoszenia"  />
+        <activity android:name=".Notatka"   android:label="Ogłoszenia - dodaj" />
         <activity
             android:name=".Userlist"
             android:label="Lista praowników" />
-        <activity android:name=".PanelActivity" />
-        <activity android:name=".Login" />
+        <activity android:name=".Login"
+            android:label="Logowanie" />
         <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

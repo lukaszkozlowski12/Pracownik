@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -56,6 +58,8 @@ public class ZobaczSprawozdania extends AppCompatActivity {
 
 
                 }
+
+                if(myAdapter.getItemCount()==0) {           Toast.makeText(ZobaczSprawozdania.this, "Brak zadań!", Toast.LENGTH_SHORT).show(); }
                 myAdapter.notifyDataSetChanged();
 
             }

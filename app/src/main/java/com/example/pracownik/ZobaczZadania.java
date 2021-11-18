@@ -59,6 +59,7 @@ public class ZobaczZadania extends AppCompatActivity {
 
 
                 }
+                if(myAdapter.getItemCount()==0) {           Toast.makeText(ZobaczZadania.this, "Brak zadań!", Toast.LENGTH_SHORT).show(); }
                 myAdapter.notifyDataSetChanged();
 
             }

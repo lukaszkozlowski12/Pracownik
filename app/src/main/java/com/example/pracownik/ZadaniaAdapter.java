@@ -118,7 +118,7 @@ if(list.get(position).getWykonawca().equals("Brak")) {
     dialog.show();
 
 
-}
+}else {  Toast.makeText(context, "Zadanie niedostępne!", Toast.LENGTH_SHORT).show();}
 
 
 

@@ -70,7 +70,7 @@ public class DodajZadanie extends AppCompatActivity {
 
 
                         Toast.makeText(DodajZadanie.this,"Successfuly Updated",Toast.LENGTH_SHORT).show();
-
+                          finish();
                     }
                 });
 

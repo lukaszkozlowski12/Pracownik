@@ -20,7 +20,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.Locale;
-
+  // ogłoszenie
 public class Notatka extends AppCompatActivity {
 EditText etTytul, etNotatka;
     FirebaseDatabase db;
@@ -64,7 +64,7 @@ String username= mAuth.getCurrentUser().getDisplayName().toString();
 
 
                         Toast.makeText(Notatka.this,"Successfuly Updated",Toast.LENGTH_SHORT).show();
-
+finish();
                     }
                 });
 
@@ -87,4 +87,6 @@ String username= mAuth.getCurrentUser().getDisplayName().toString();
         Date date = new Date();
         return dateFormat.format(date);
     }
-}
+
+
+  }

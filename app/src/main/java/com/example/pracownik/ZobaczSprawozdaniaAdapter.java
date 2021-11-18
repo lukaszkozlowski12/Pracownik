@@ -76,66 +76,7 @@ public class ZobaczSprawozdaniaAdapter extends RecyclerView.Adapter<ZobaczSprawo
             @Override
             public void onClick(View v) {
 
-              /*  if (list.get(position).getSpr().equals("brak")){
-                    Toast.makeText(context, "Wybrano:  " + list.get(position).getNazwa_zadania(), Toast.LENGTH_SHORT).show();
 
-                    // Toast.makeText(context, "Hello, clicked " + list.get(position).getNazwa_zadania(), Toast.LENGTH_SHORT).show();
-
-                    // AlertDialog dialog = new AlertDialog();
-                    // setup the alert builder
-
-                    android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(context);
-                    builder.setTitle("Sprawozdanie"); // tytuł okna dialogowego
-                    builder.setMessage("Czy chcesz dodać sprawozdania z zadania: " + list.get(position).getNazwa_zadania() + "?");
-                    // dodanie i obsługa przycisku Tak
-                    builder.setPositiveButton("Tak", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            Toast.makeText(context, "Successfuly click", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(context, SprawozdanieActivity.class);
-                            intent.putExtra("nazwa_zadania", list.get(position).getNazwa_zadania());
-                            intent.putExtra("opis_zadania", list.get(position).getOpis_zadania());
-                            intent.putExtra("miejsce", list.get(position).getMiejsce());
-                            intent.putExtra("data_publikacji",list.get(position).getData_publikacji());
-                            intent.putExtra("data_przyjecia",list.get(position).getData_przyjecia());
-                            Double w =list.get(position).getWynagrodzenie();
-                            String wynagro = Double.toString(w);
-                            intent.putExtra("wynagrodzenie", wynagro);
-
-                            context.startActivity(intent);
-
-
-                        /*   Zadania zadanie = new Zadania(list.get(position).getNazwa_zadania(), list.get(position).getOpis_zadania(), list.get(position).getMiejsce(),list.get(position).getWykonawca(), list.get(position).getData_publikacji(), getDateTime(), list.get(position).getWynagrodzenie(),"Tak");
-
-
-                            db = FirebaseDatabase.getInstance();
-                            reference = db.getReference("Zadania");
-                            reference.child(list.get(position).getNazwa_zadania()).setValue(zadanie).addOnCompleteListener(new OnCompleteListener<Void>() {
-
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    holder.itemView.setBackgroundColor(Color.RED);
-
-                                    Toast.makeText(context, "Successfuly Updated", Toast.LENGTH_SHORT).show();
-
-                                }
-                            });
-
-                        }
-                    });
-                    // dodanie przycisku anuluj
-                    builder.setNegativeButton("Anuluj", null);
-                    // create and show the alert dialog
-                    android.app.AlertDialog dialog = builder.create();
-                    dialog.show();
-
-                }else {     Toast.makeText(context, "Sprawozdanie zostło wykonane!! ", Toast.LENGTH_SHORT).show();}
-
-*/
-
-
-
-                //------------------------------------------------------------------------------
 
                 Toast.makeText(context, "Sprawozdanie zostło wykonane!! ", Toast.LENGTH_SHORT).show();
             }

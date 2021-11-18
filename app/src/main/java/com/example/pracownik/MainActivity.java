@@ -22,6 +22,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
+   // AUTOR ŁUKASZ KOZŁOWSKI  GRUPA 2.2/3
 
     ActivityMainBinding binding;
     String firstName, email, passwd, userName;
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        System.out.println("Witaj w apce");
+
         binding.registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 passwd = binding.passwd.getText().toString();
                 userName = binding.userName.getText().toString();
                 mAuth = FirebaseAuth.getInstance();
-                Toast.makeText(MainActivity.this,"Kliknięto\n"+firstName+email+passwd+userName,Toast.LENGTH_LONG).show();
+             //   Toast.makeText(MainActivity.this,"Kliknięto\n"+firstName+email+passwd+userName,Toast.LENGTH_LONG).show();
 
 
                 if (!firstName.isEmpty() && !email.isEmpty() && !passwd.isEmpty() && !userName.isEmpty() && passwd.length()>6){
@@ -79,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                                 UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder().setDisplayName(userName).build();
                                 user.updateProfile(profileUpdates);
                                 finish();
-
+                                 startActivity(new Intent(MainActivity.this, Login.class));
 
                             }else{
                                 Toast.makeText(MainActivity.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
@@ -99,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
         binding.loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 startActivity(new Intent(MainActivity.this, Login.class));
             }
         });

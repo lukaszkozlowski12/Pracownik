@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.load.model.Model;
@@ -34,7 +35,7 @@ import com.google.firebase.storage.UploadTask;
 
 public class SprawozdanieActivity extends AppCompatActivity {
     private Button uploadBtn;
-      Model2 mm;
+
     private ImageView imageView;
     private ProgressBar progressBar;
     private EditText etInfoToSzef;
@@ -65,6 +66,12 @@ public class SprawozdanieActivity extends AppCompatActivity {
         String  opis_zadania = intent.getStringExtra("opis_zadania");
         String  miejsce = intent.getStringExtra("miejsce");
         String  wynagrodzenie = intent.getStringExtra("wynagrodzenie");
+        ((TextView)findViewById(R.id.tvNazwaZadania)).setText(nazwa_zadania);
+        ((TextView)findViewById(R.id.tvOpis)).setText(opis_zadania);
+        ((TextView)findViewById(R.id.tvMiejsce)).setText(miejsce);
+        ((TextView)findViewById(R.id.tvWynagrodzenie)).setText(wynagrodzenie);
+
+
          etInfoToSzef= ((EditText)findViewById(R.id.etInfodlaSzefa));
         System.out.println("Dane="+nazwa_zadania+" "+opis_zadania+" "+miejsce+" "+wynagrodzenie);
         imageView.setOnClickListener(new View.OnClickListener() {
@@ -112,8 +119,8 @@ public class SprawozdanieActivity extends AppCompatActivity {
                     refdb.child(nazwa_zadania).setValue(spr).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-
-                         startActivity(new Intent(SprawozdanieActivity.this, PanelActivity.class));
+                               finish();
+                         startActivity(new Intent(SprawozdanieActivity.this, PanelActivity2.class));
                             //  Toast.makeText(SprawozdanieActivity.this,"Successfuly add!",Toast.LENGTH_SHORT).show();
 
                         }

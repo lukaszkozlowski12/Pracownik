@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,22 +34,29 @@ public class NotatkiList extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         list = new ArrayList<>();
+
         myAdapter = new NotatkiAdapter(this,list);
+
         recyclerView.setAdapter(myAdapter);
 
         database.addValueEventListener(new ValueEventListener() {
+
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
 
-                    System.out.println("children= "+dataSnapshot.getValue().toString());
+                //    System.out.println("children= "+dataSnapshot.getValue().toString());
               Informacje info = dataSnapshot.getValue(Informacje.class);
                list.add(info);
-                    System.out.println("children user= "+info.getUserName());
+                 System.out.println("Tytul= "+info.getTytul());
 
                 }
+
+                if(myAdapter.getItemCount()==0) {           Toast.makeText(NotatkiList.this, "Brak !", Toast.LENGTH_SHORT).show(); }
+
                 myAdapter.notifyDataSetChanged();
+
 
             }
 
@@ -56,8 +64,16 @@ public class NotatkiList extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
+
         });
 
 
     }
+
+
+
+
+
+
+
 }

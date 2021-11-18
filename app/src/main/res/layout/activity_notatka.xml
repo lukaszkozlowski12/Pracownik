@@ -35,12 +35,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="Wpisz tytuł notatki"
+        android:gravity="center_horizontal"
 
+        android:text="Wpisz tytuł ogłoszenia"
+        android:textColor="@color/teal_700"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:textColor="@color/teal_700"
-        android:gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -66,7 +66,7 @@
         android:layout_marginTop="20dp"
 
         android:gravity="center_horizontal"
-        android:text="Napisz notatkę"
+        android:text="Napisz ogłoszenie"
         android:textColor="@color/teal_700"
         android:textSize="30sp"
         android:textStyle="bold"
